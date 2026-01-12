@@ -1,0 +1,80 @@
+// ===============================
+// Gerador de Aventura de Horror
+// Resultado COMPLETO (nome + descrição)
+// Visuliazação dos Resultados somente para o GM
+
+// Desenvolvida por
+// Mestre Charles Corrêa  
+// https://rpg.charlescorrea.com.br)
+// charlescorreaweb@gmail.com
+// Testado na V13 do Foundry
+// ===============================
+
+const tableNames = [
+  "Objetivos - Horror",
+  "Localidades - Horror",
+  "Antagonistas - Horror",
+  "Coadjuvantes - Horror",
+  "Complicações - Horror",
+  "Inimigos",
+  "Boss",
+  "Recompensas"
+];
+
+let resultsHTML = "";
+
+for (const tableName of tableNames) {
+  const table = game.tables.getName(tableName);
+
+  if (!table) {
+    resultsHTML += `
+      <div style="margin-bottom:8px;">
+        <strong>${tableName}:</strong>
+        <em>Tabela não encontrada</em>
+      </div>`;
+    continue;
+  }
+
+  const draw = await table.draw({ displayChat: false });
+  const result = draw.results[0];
+
+  const title = result.name ?? "Resultado";
+  const description = result.description ?? result.text ?? "";
+
+  resultsHTML += `
+    <div style="margin-bottom:10px;">
+      <strong>${tableName.replace(" - Horror","")}:</strong><br>
+      <em>${title}</em>
+      <div style="margin-left:10px;">
+        ${description}
+      </div>
+    </div>`;
+}
+
+// ===============================
+// Estilo visual tipo Bootstrap alert-warning
+// ===============================
+
+const content = `
+<div style="
+  background-color:#fff3cd;
+  border:1px solid #ffecb5;
+  color:#664d03;
+  padding:14px;
+  border-radius:6px;
+  font-family:Arial, sans-serif;
+">
+  <h3 style="margin-top:0;">⚠️ Gerador de Aventuras de Terror/Horror</h3>
+  ${resultsHTML}
+</div>
+`;
+
+// ===============================
+// Whisper apenas para o GM
+// ===============================
+
+ChatMessage.create({
+  content,
+  whisper: ChatMessage.getWhisperRecipients("GM"),
+  speaker: { alias: "Gerador de Horror" }
+});
