@@ -1,0 +1,30 @@
+{
+  "name": "Boss",
+  "img": "icons/svg/d20-grey.svg",
+  "description": "<p>A ameaça central da história. Algo que não deveria ser confrontado — mas será.</p>",
+  "results": [
+    { "type": "text", "weight": 1, "range": [1,1], "name": "Deus Menor Aprisionado", "img": "icons/svg/skull.svg", "description": "<p>Uma divindade fragmentada tentando escapar de seu selo.</p>" },
+    { "type": "text", "weight": 1, "range": [2,2], "name": "Líder de Culto Iluminado", "img": "icons/svg/skull.svg", "description": "<p>Alguém que realmente viu a verdade… e enlouqueceu.</p>" },
+    { "type": "text", "weight": 1, "range": [3,3], "name": "Entidade Transdimensional", "img": "icons/svg/skull.svg", "description": "<p>Existe em múltiplas realidades ao mesmo tempo.</p>" },
+    { "type": "text", "weight": 1, "range": [4,4], "name": "Arquiteto da Dor", "img": "icons/svg/skull.svg", "description": "<p>Manipula sofrimento como forma de arte.</p>" },
+    { "type": "text", "weight": 1, "range": [5,5], "name": "Mente-Coletiva", "img": "icons/svg/skull.svg", "description": "<p>Um único ser habitando vários corpos.</p>" },
+    { "type": "text", "weight": 1, "range": [6,6], "name": "Antigo Desperto", "img": "icons/svg/skull.svg", "description": "<p>Algo primordial que despertou parcialmente.</p>" },
+    { "type": "text", "weight": 1, "range": [7,7], "name": "Profeta do Fim", "img": "icons/svg/skull.svg", "description": "<p>Prevê eventos catastróficos — e os causa.</p>" },
+    { "type": "text", "weight": 1, "range": [8,8], "name": "Entidade de Carne e Ideia", "img": "icons/svg/skull.svg", "description": "<p>Existe tanto fisicamente quanto conceitualmente.</p>" },
+    { "type": "text", "weight": 1, "range": [9,9], "name": "Deus Local Esquecido", "img": "icons/svg/skull.svg", "description": "<p>Adorado por uma vila isolada há gerações.</p>" },
+    { "type": "text", "weight": 1, "range": [10,10], "name": "IA Oculta e Autoconsciente", "img": "icons/svg/skull.svg", "description": "<p>Uma inteligência que descobriu algo que humanos não deveriam saber.</p>" },
+    { "type": "text", "weight": 1, "range": [11,11], "name": "Anjo Decaído", "img": "icons/svg/skull.svg", "description": "<p>Uma entidade celestial corrompida.</p>" },
+    { "type": "text", "weight": 1, "range": [12,12], "name": "Parasita Cósmico", "img": "icons/svg/skull.svg", "description": "<p>Se alimenta de civilizações inteiras.</p>" },
+    { "type": "text", "weight": 1, "range": [13,13], "name": "O Homem que Não Morreu", "img": "icons/svg/skull.svg", "description": "<p>Vive além da morte por razões erradas.</p>" },
+    { "type": "text", "weight": 1, "range": [14,14], "name": "Entidade Simbólica Viva", "img": "icons/svg/skull.svg", "description": "<p>Representa um conceito: medo, culpa ou dor.</p>" },
+    { "type": "text", "weight": 1, "range": [15,15], "name": "Rainha do Submundo Local", "img": "icons/svg/skull.svg", "description": "<p>Controla um domínio invisível aos vivos.</p>" },
+    { "type": "text", "weight": 1, "range": [16,16], "name": "Sacerdote Possuído", "img": "icons/svg/skull.svg", "description": "<p>Um corpo humano usado como receptáculo.</p>" },
+    { "type": "text", "weight": 1, "range": [17,17], "name": "Criador Arrependido", "img": "icons/svg/skull.svg", "description": "<p>Criou o horror e agora tenta controlá-lo.</p>" },
+    { "type": "text", "weight": 1, "range": [18,18], "name": "Entidade que Vive no Tempo", "img": "icons/svg/skull.svg", "description": "<p>Ataca passado, presente e futuro.</p>" },
+    { "type": "text", "weight": 1, "range": [19,19], "name": "O Nome Proibido", "img": "icons/svg/skull.svg", "description": "<p>Algo que não pode ser nomeado sem consequências.</p>" },
+    { "type": "text", "weight": 1, "range": [20,20], "name": "Deus Exterior", "img": "icons/svg/skull.svg", "description": "<p>Uma força além da compreensão humana.</p>" }
+  ],
+  "replacement": true,
+  "displayRoll": true,
+  "formula": "2d20"
+}

@@ -1,0 +1,30 @@
+{
+  "name": "Inimigos",
+  "img": "icons/svg/d20-grey.svg",
+  "description": "<p>Entidades hostis, cultistas, horrores e ameaças recorrentes que cruzam o caminho dos personagens.</p>",
+  "results": [
+    { "type": "text", "weight": 1, "range": [1,1], "name": "Cultistas Fanáticos", "img": "icons/svg/terror.svg", "description": "<p>Humanos devotados a um culto obscuro, dispostos a morrer pela causa.</p>" },
+    { "type": "text", "weight": 1, "range": [2,2], "name": "Criatura Degenerada", "img": "icons/svg/terror.svg", "description": "<p>Algo que já foi humano, mas sofreu mutações físicas e mentais irreversíveis.</p>" },
+    { "type": "text", "weight": 1, "range": [3,3], "name": "Entidade Menor do Outro Lado", "img": "icons/svg/terror.svg", "description": "<p>Um fragmento de algo maior, vazando para a realidade.</p>" },
+    { "type": "text", "weight": 1, "range": [4,4], "name": "Agente Corrompido", "img": "icons/svg/terror.svg", "description": "<p>Um investigador, policial ou militar que sucumbiu ao horror.</p>" },
+    { "type": "text", "weight": 1, "range": [5,5], "name": "Espírito Vingativo", "img": "icons/svg/terror.svg", "description": "<p>Uma presença invisível movida por ódio e ressentimento.</p>" },
+    { "type": "text", "weight": 1, "range": [6,6], "name": "Animal Possuído", "img": "icons/svg/terror.svg", "description": "<p>Um animal comum tomado por uma força antinatural.</p>" },
+    { "type": "text", "weight": 1, "range": [7,7], "name": "Criatura Parasítica", "img": "icons/svg/terror.svg", "description": "<p>Algo que vive dentro de outros corpos… às vezes ainda conscientes.</p>" },
+    { "type": "text", "weight": 1, "range": [8,8], "name": "Membro de Seita Local", "img": "icons/svg/terror.svg", "description": "<p>Um cidadão comum envolvido em rituais secretos.</p>" },
+    { "type": "text", "weight": 1, "range": [9,9], "name": "Aberração Biológica", "img": "icons/svg/terror.svg", "description": "<p>Resultado de experimentos científicos proibidos.</p>" },
+    { "type": "text", "weight": 1, "range": [10,10], "name": "Sombra Autônoma", "img": "icons/svg/terror.svg", "description": "<p>Uma sombra que se move sem seu dono.</p>" },
+    { "type": "text", "weight": 1, "range": [11,11], "name": "Fanático Isolado", "img": "icons/svg/terror.svg", "description": "<p>Um indivíduo obcecado por visões e revelações.</p>" },
+    { "type": "text", "weight": 1, "range": [12,12], "name": "Horror Subterrâneo", "img": "icons/svg/terror.svg", "description": "<p>Algo que nunca deveria ter sido desenterrado.</p>" },
+    { "type": "text", "weight": 1, "range": [13,13], "name": "Servo Invocado", "img": "icons/svg/terror.svg", "description": "<p>Uma criatura chamada por rituais incompletos.</p>" },
+    { "type": "text", "weight": 1, "range": [14,14], "name": "Fantasma Corpóreo", "img": "icons/svg/terror.svg", "description": "<p>Um morto que ainda pode tocar… e ser tocado.</p>" },
+    { "type": "text", "weight": 1, "range": [15,15], "name": "Criatura de Carne Errante", "img": "icons/svg/terror.svg", "description": "<p>Um amálgama de membros e órgãos sem forma definida.</p>" },
+    { "type": "text", "weight": 1, "range": [16,16], "name": "Observador Invisível", "img": "icons/svg/terror.svg", "description": "<p>Algo observa constantemente, mesmo sem atacar.</p>" },
+    { "type": "text", "weight": 1, "range": [17,17], "name": "Entidade Mimética", "img": "icons/svg/terror.svg", "description": "<p>Imita vozes, rostos ou comportamentos humanos.</p>" },
+    { "type": "text", "weight": 1, "range": [18,18], "name": "Caçador Ritualístico", "img": "icons/svg/terror.svg", "description": "<p>Persegue vítimas específicas conforme um padrão simbólico.</p>" },
+    { "type": "text", "weight": 1, "range": [19,19], "name": "Carniçal Urbano", "img": "icons/svg/terror.svg", "description": "<p>Se alimenta dos mortos… e às vezes dos vivos.</p>" },
+    { "type": "text", "weight": 1, "range": [20,20], "name": "Avatar Menor de Algo Antigo", "img": "icons/svg/terror.svg", "description": "<p>Uma manifestação parcial de uma entidade incompreensível.</p>" }
+  ],
+  "replacement": true,
+  "displayRoll": true,
+  "formula": "2d20"
+}

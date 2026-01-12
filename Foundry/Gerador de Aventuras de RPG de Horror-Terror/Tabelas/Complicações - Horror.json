@@ -1,0 +1,33 @@
+{
+  "name": "Complicações - Horror",
+  "img": "icons/svg/d20-grey.svg",
+  "description": "<p>Eventos inesperados que agravam a situação, aumentam a tensão e empurram a narrativa para o horror. Nenhuma solução vem sem custo.</p>",
+  "results": [
+    { "type": "text", "weight": 1, "range": [1,1], "name": "A polícia intervém no pior momento", "img": "icons/svg/terror.svg", "description": "<p>A presença oficial atrapalha, em vez de ajudar.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [2,2], "name": "Provas começam a desaparecer", "img": "icons/svg/terror.svg", "description": "<p>Alguém está limpando rastros — ou algo está se apagando.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [3,3], "name": "Um aliado se revela comprometido", "img": "icons/svg/terror.svg", "description": "<p>Ele escondeu a verdade por tempo demais.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [4,4], "name": "O tempo está acabando rápido demais", "img": "icons/svg/terror.svg", "description": "<p>O ritual, a mutação ou o colapso se acelera.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [5,5], "name": "Comunicação é interrompida", "img": "icons/svg/terror.svg", "description": "<p>Celulares, rádios e internet deixam de funcionar.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [6,6], "name": "O local muda sutilmente", "img": "icons/svg/terror.svg", "description": "<p>Portas surgem, corredores encurtam, saídas somem.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [7,7], "name": "Autoridades encobrem o ocorrido", "img": "icons/svg/terror.svg", "description": "<p>A verdade é considerada perigosa demais.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [8,8], "name": "Um inocente é envolvido", "img": "icons/svg/terror.svg", "description": "<p>Agora a escolha é moral, não tática.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [9,9], "name": "Um personagem começa a mudar", "img": "icons/svg/terror.svg", "description": "<p>Sintomas físicos ou mentais surgem lentamente.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [10,10], "name": "O antagonista antecipa os passos do grupo", "img": "icons/svg/terror.svg", "description": "<p>Como se estivesse observando tudo.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+
+    { "type": "text", "weight": 1, "range": [11,11], "name": "Algo desperta antes da hora", "img": "icons/svg/terror.svg", "description": "<p>O horror não estava pronto… agora está.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [12,12], "name": "O passado retorna de forma violenta", "img": "icons/svg/terror.svg", "description": "<p>Um erro antigo cobra seu preço.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [13,13], "name": "Um sacrifício é exigido", "img": "icons/svg/terror.svg", "description": "<p>Sem ele, não há progresso possível.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [14,14], "name": "A realidade começa a falhar", "img": "icons/svg/terror.svg", "description": "<p>Tempo, espaço e memória se tornam instáveis.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [15,15], "name": "O grupo é acusado de causar o horror", "img": "icons/svg/terror.svg", "description": "<p>Agora eles precisam fugir e investigar.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [16,16], "name": "O conhecimento cobra seu preço", "img": "icons/svg/terror.svg", "description": "<p>Sanidade, memória ou identidade são afetadas.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [17,17], "name": "O local se torna um ponto de atração", "img": "icons/svg/terror.svg", "description": "<p>Mais coisas começam a aparecer.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [18,18], "name": "Um aliado morre ou desaparece", "img": "icons/svg/terror.svg", "description": "<p>O impacto emocional é imediato.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [19,19], "name": "O horror se adapta às ações do grupo", "img": "icons/svg/terror.svg", "description": "<p>Ele aprende com cada tentativa.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [20,20], "name": "Não há mais volta", "img": "icons/svg/terror.svg", "description": "<p>A linha foi cruzada e o mundo não será o mesmo.</p>", "drawn": false, "flags": {}, "documentUuid": null }
+  ],
+  "replacement": true,
+  "displayRoll": true,
+  "flags": {},
+  "formula": "1d20",
+  "ownership": { "default": 0 }
+}

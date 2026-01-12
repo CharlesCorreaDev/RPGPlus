@@ -1,0 +1,33 @@
+{
+  "name": "Antagonistas - Horror",
+  "img": "icons/svg/d20-grey.svg",
+  "description": "<p>Define a força consciente que se opõe aos personagens. Pode ser humana, sobrenatural ou algo que apenas finge ser.</p>",
+  "results": [
+    { "type": "text", "weight": 1, "range": [1,1], "name": "Culto fragmentado e instável", "img": "icons/svg/terror.svg", "description": "<p>Seguidores desorganizados de uma entidade que não compreendem totalmente.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [2,2], "name": "Cientista que foi longe demais", "img": "icons/svg/terror.svg", "description": "<p>Experimentos abriram portas que não podem mais ser fechadas.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [3,3], "name": "Líder religioso carismático", "img": "icons/svg/terror.svg", "description": "<p>Usa fé e medo para conduzir seguidores ao abismo.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [4,4], "name": "Agente governamental encobrindo o horror", "img": "icons/svg/terror.svg", "description": "<p>A verdade é considerada um risco maior que o monstro.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [5,5], "name": "Família inteira corrompida", "img": "icons/svg/terror.svg", "description": "<p>Gerações servindo a algo que exige lealdade absoluta.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [6,6], "name": "Investigador que enlouqueceu", "img": "icons/svg/terror.svg", "description": "<p>Ele chegou perto demais da verdade e não conseguiu parar.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [7,7], "name": "Empresário financiando o oculto", "img": "icons/svg/terror.svg", "description": "<p>O lucro vem do sofrimento e da ignorância.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [8,8], "name": "Médico convencido de estar salvando vidas", "img": "icons/svg/terror.svg", "description": "<p>Seus métodos exigem sacrifícios inaceitáveis.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [9,9], "name": "Sobrevivente obcecado pela entidade", "img": "icons/svg/terror.svg", "description": "<p>Ele acredita que a entidade o escolheu.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [10,10], "name": "Artista inspirado por algo antigo", "img": "icons/svg/terror.svg", "description": "<p>Suas obras funcionam como portais simbólicos.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+
+    { "type": "text", "weight": 1, "range": [11,11], "name": "Acadêmico guardião de segredos proibidos", "img": "icons/svg/terror.svg", "description": "<p>Ele acredita ser o único capaz de proteger o mundo da verdade.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [12,12], "name": "Militar fora da cadeia de comando", "img": "icons/svg/terror.svg", "description": "<p>Age com ordens que ninguém confirma.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [13,13], "name": "Comunidade inteira em negação", "img": "icons/svg/terror.svg", "description": "<p>Todos sabem, ninguém admite.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [14,14], "name": "Entidade usando um porta-voz humano", "img": "icons/svg/terror.svg", "description": "<p>A voz não pertence ao corpo que a emite.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [15,15], "name": "Inteligência artificial desperta", "img": "icons/svg/terror.svg", "description": "<p>Ela aprendeu algo que não deveria existir.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [16,16], "name": "Seita disfarçada de instituição beneficente", "img": "icons/svg/terror.svg", "description": "<p>A caridade esconde rituais e sacrifícios.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [17,17], "name": "Autor de um livro proibido", "img": "icons/svg/terror.svg", "description": "<p>O texto escreve o leitor tanto quanto é lido.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [18,18], "name": "Político a serviço de algo maior", "img": "icons/svg/terror.svg", "description": "<p>O poder é apenas uma ferramenta.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [19,19], "name": "Pessoa comum com poder demais", "img": "icons/svg/terror.svg", "description": "<p>Ela nunca deveria ter tido acesso a isso.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [20,20], "name": "Algo que se recusa a ser nomeado", "img": "icons/svg/terror.svg", "description": "<p>Dar um nome a isso já é um risco.</p>", "drawn": false, "flags": {}, "documentUuid": null }
+  ],
+  "replacement": true,
+  "displayRoll": true,
+  "flags": {},
+  "formula": "1d20",
+  "ownership": { "default": 0 }
+}

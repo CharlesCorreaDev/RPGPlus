@@ -1,0 +1,33 @@
+{
+  "name": "Localidades - Horror",
+  "img": "icons/svg/d20-grey.svg",
+  "description": "<p>Define o local principal onde o horror se manifesta. A localidade influencia o clima, os NPCs e o tipo de ameaça enfrentada.</p>",
+  "results": [
+    { "type": "text", "weight": 1, "range": [1,1], "name": "Vila isolada envolta em neblina", "img": "icons/svg/terror.svg", "description": "<p>Uma pequena vila onde o sol raramente aparece e os moradores evitam perguntas diretas.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [2,2], "name": "Hospital abandonado ainda em uso", "img": "icons/svg/terror.svg", "description": "<p>Apesar de oficialmente fechado, luzes ainda se acendem à noite.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [3,3], "name": "Mansão antiga de arquitetura impossível", "img": "icons/svg/terror.svg", "description": "<p>Corredores se alongam, portas mudam de lugar e o interior não bate com o exterior.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [4,4], "name": "Complexo industrial desativado", "img": "icons/svg/terror.svg", "description": "<p>Máquinas enferrujadas ainda parecem vibrar, como se aguardassem algo.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [5,5], "name": "Igreja onde sinos tocam sozinhos", "img": "icons/svg/terror.svg", "description": "<p>Os sinos anunciam horários que não existem mais.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [6,6], "name": "Floresta onde o som não se propaga", "img": "icons/svg/terror.svg", "description": "<p>Gritos e tiros são engolidos pela mata silenciosa.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [7,7], "name": "Estação de pesquisa subterrânea", "img": "icons/svg/terror.svg", "description": "<p>Projetada para nunca ser encontrada novamente.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [8,8], "name": "Prédio residencial condenado", "img": "icons/svg/terror.svg", "description": "<p>Os apartamentos ainda guardam sinais de vida recente.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [9,9], "name": "Porto esquecido fora dos mapas", "img": "icons/svg/terror.svg", "description": "<p>Navios chegam, mas nunca partem.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [10,10], "name": "Escola fechada após um incidente", "img": "icons/svg/terror.svg", "description": "<p>Quadros ainda mostram lições interrompidas abruptamente.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+
+    { "type": "text", "weight": 1, "range": [11,11], "name": "Sanatório nos limites da cidade", "img": "icons/svg/terror.svg", "description": "<p>Alguns pacientes nunca receberam alta… oficialmente.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [12,12], "name": "Arquivo público com alas proibidas", "img": "icons/svg/terror.svg", "description": "<p>Certos documentos só podem ser lidos uma vez.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [13,13], "name": "Estrada que não leva a lugar algum", "img": "icons/svg/terror.svg", "description": "<p>Quanto mais se anda, mais distante o ponto de partida parece.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [14,14], "name": "Aldeia ausente de registros oficiais", "img": "icons/svg/terror.svg", "description": "<p>Para o mundo exterior, esse lugar nunca existiu.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [15,15], "name": "Teatro em ruínas ainda em atividade", "img": "icons/svg/terror.svg", "description": "<p>Espetáculos continuam sendo encenados para plateias invisíveis.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [16,16], "name": "Fábrica tomada por fungos e símbolos", "img": "icons/svg/terror.svg", "description": "<p>Os símbolos crescem junto com a matéria orgânica.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [17,17], "name": "Bairro inteiro abandonado", "img": "icons/svg/terror.svg", "description": "<p>Tudo foi deixado para trás em questão de minutos.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [18,18], "name": "Complexo religioso isolado", "img": "icons/svg/terror.svg", "description": "<p>Os rituais nunca foram interrompidos.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [19,19], "name": "Casa comum demais para ser normal", "img": "icons/svg/terror.svg", "description": "<p>Tudo parece correto… demais.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [20,20], "name": "Lugar que não deveria existir", "img": "icons/svg/terror.svg", "description": "<p>Mapas, memórias e registros entram em conflito ao descrevê-lo.</p>", "drawn": false, "flags": {}, "documentUuid": null }
+  ],
+  "replacement": true,
+  "displayRoll": true,
+  "flags": {},
+  "formula": "1d20",
+  "ownership": { "default": 0 }
+}

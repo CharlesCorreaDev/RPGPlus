@@ -1,0 +1,33 @@
+{
+  "name": "Objetivos - Horror",
+  "img": "icons/svg/d20-grey.svg",
+  "description": "<p>Define o objetivo central da aventura de horror. O que os personagens precisam fazer, impedir ou descobrir.</p>",
+  "results": [
+    { "type": "text", "weight": 1, "range": [1,1], "name": "Descobrir a origem de mortes inexplicáveis", "img": "icons/svg/terror.svg", "description": "<p>Uma série de mortes sem causa aparente esconde algo além da compreensão humana.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [2,2], "name": "Impedir um ritual em andamento", "img": "icons/svg/terror.svg", "description": "<p>O ritual já começou. Cada atraso aproxima algo do outro lado.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [3,3], "name": "Recuperar um artefato antigo", "img": "icons/svg/terror.svg", "description": "<p>O objeto não deve ser usado, estudado ou sequer tocado.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [4,4], "name": "Silenciar uma verdade proibida", "img": "icons/svg/terror.svg", "description": "<p>Algumas verdades destroem tudo quando reveladas.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [5,5], "name": "Resgatar alguém que mudou", "img": "icons/svg/terror.svg", "description": "<p>A pessoa ainda vive, mas algo nela não é mais humano.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [6,6], "name": "Quebrar uma maldição antiga", "img": "icons/svg/terror.svg", "description": "<p>A maldição se adapta a quem tenta quebrá-la.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [7,7], "name": "Identificar o traidor", "img": "icons/svg/terror.svg", "description": "<p>Alguém próximo está colaborando com o horror.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [8,8], "name": "Conter uma entidade libertada por erro", "img": "icons/svg/terror.svg", "description": "<p>Algo foi solto e não entende o mundo atual.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [9,9], "name": "Sobreviver até o amanhecer", "img": "icons/svg/terror.svg", "description": "<p>O tempo é o verdadeiro inimigo.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [10,10], "name": "Decidir se o mundo deve saber", "img": "icons/svg/terror.svg", "description": "<p>Revelar a verdade pode ser pior do que escondê-la.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+
+    { "type": "text", "weight": 1, "range": [11,11], "name": "Encontrar a última testemunha viva", "img": "icons/svg/terror.svg", "description": "<p>Ela sabe demais e o horror sabe disso.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [12,12], "name": "Confirmar se o horror é real", "img": "icons/svg/terror.svg", "description": "<p>Ou todos estão enlouquecendo juntos.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [13,13], "name": "Impedir que o conhecimento se espalhe", "img": "icons/svg/terror.svg", "description": "<p>Livros, registros e memórias precisam sumir.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [14,14], "name": "Expor uma conspiração impossível", "img": "icons/svg/terror.svg", "description": "<p>Ninguém vai acreditar.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [15,15], "name": "Fechar um portal instável", "img": "icons/svg/terror.svg", "description": "<p>Algo observa do outro lado.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [16,16], "name": "Trocar algo valioso por respostas", "img": "icons/svg/terror.svg", "description": "<p>O preço nunca é justo.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [17,17], "name": "Localizar um corpo inexistente", "img": "icons/svg/terror.svg", "description": "<p>Ele não deveria existir… mas existe.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [18,18], "name": "Escapar levando a prova", "img": "icons/svg/terror.svg", "description": "<p>Algo tentará impedir a fuga.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [19,19], "name": "Escolher quem será sacrificado", "img": "icons/svg/terror.svg", "description": "<p>Sem sacrifício, não há saída.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [20,20], "name": "Aceitar que não há solução", "img": "icons/svg/terror.svg", "description": "<p>Alguns horrores apenas continuam.</p>", "drawn": false, "flags": {}, "documentUuid": null }
+  ],
+  "replacement": true,
+  "displayRoll": true,
+  "flags": {},
+  "formula": "1d20",
+  "ownership": { "default": 0 }
+}

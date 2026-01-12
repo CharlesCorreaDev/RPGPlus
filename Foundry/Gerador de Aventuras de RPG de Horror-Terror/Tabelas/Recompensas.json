@@ -1,0 +1,30 @@
+{
+  "name": "Recompensas",
+  "img": "icons/svg/d20-grey.svg",
+  "description": "<p>Nem toda recompensa é boa. Algumas apenas parecem ser.</p>",
+  "results": [
+    { "type": "text", "weight": 1, "range": [1,1], "name": "Conhecimento Proibido", "img": "icons/svg/book.svg", "description": "<p>Informações que corroem a sanidade.</p>" },
+    { "type": "text", "weight": 1, "range": [2,2], "name": "Artefato Antigo", "img": "icons/svg/book.svg", "description": "<p>Um objeto com poderes ocultos e preço elevado.</p>" },
+    { "type": "text", "weight": 1, "range": [3,3], "name": "Favor de uma Entidade", "img": "icons/svg/book.svg", "description": "<p>Algo que poderá ser cobrado no futuro.</p>" },
+    { "type": "text", "weight": 1, "range": [4,4], "name": "Acesso a Arquivos Secretos", "img": "icons/svg/book.svg", "description": "<p>Documentos governamentais ou ocultistas.</p>" },
+    { "type": "text", "weight": 1, "range": [5,5], "name": "Dinheiro Manchado", "img": "icons/svg/book.svg", "description": "<p>Recursos financeiros de origem questionável.</p>" },
+    { "type": "text", "weight": 1, "range": [6,6], "name": "Contato Influente", "img": "icons/svg/book.svg", "description": "<p>Alguém poderoso, mas perigoso.</p>" },
+    { "type": "text", "weight": 1, "range": [7,7], "name": "Ritual Incompleto", "img": "icons/svg/book.svg", "description": "<p>Uma magia que nunca deveria ser finalizada.</p>" },
+    { "type": "text", "weight": 1, "range": [8,8], "name": "Imunidade Temporária", "img": "icons/svg/book.svg", "description": "<p>Proteção contra algo específico… por enquanto.</p>" },
+    { "type": "text", "weight": 1, "range": [9,9], "name": "Verdade Oculta", "img": "icons/svg/book.svg", "description": "<p>Uma revelação que muda tudo.</p>" },
+    { "type": "text", "weight": 1, "range": [10,10], "name": "Marca Invisível", "img": "icons/svg/book.svg", "description": "<p>Algo agora reconhece os personagens.</p>" },
+    { "type": "text", "weight": 1, "range": [11,11], "name": "Relíquia Amaldiçoada", "img": "icons/svg/book.svg", "description": "<p>Poderosa, mas perigosa de usar.</p>" },
+    { "type": "text", "weight": 1, "range": [12,12], "name": "Aliado Temporário", "img": "icons/svg/book.svg", "description": "<p>Ajuda que não durará para sempre.</p>" },
+    { "type": "text", "weight": 1, "range": [13,13], "name": "Proteção Ritualística", "img": "icons/svg/book.svg", "description": "<p>Um selo que afasta algo específico.</p>" },
+    { "type": "text", "weight": 1, "range": [14,14], "name": "Visões do Futuro", "img": "icons/svg/book.svg", "description": "<p>Fragmentos do que ainda vai acontecer.</p>" },
+    { "type": "text", "weight": 1, "range": [15,15], "name": "Objeto Tecnológico Proibido", "img": "icons/svg/book.svg", "description": "<p>Avançado demais para existir.</p>" },
+    { "type": "text", "weight": 1, "range": [16,16], "name": "Restauração Parcial", "img": "icons/svg/book.svg", "description": "<p>Algo é curado, mas nunca totalmente.</p>" },
+    { "type": "text", "weight": 1, "range": [17,17], "name": "Reputação no Submundo", "img": "icons/svg/book.svg", "description": "<p>O nome dos personagens começa a circular.</p>" },
+    { "type": "text", "weight": 1, "range": [18,18], "name": "Pacto Implícito", "img": "icons/svg/book.svg", "description": "<p>Um acordo que ninguém verbalizou.</p>" },
+    { "type": "text", "weight": 1, "range": [19,19], "name": "Conhecimento que Não Pode Ser Desaprendido", "img": "icons/svg/book.svg", "description": "<p>Algo que muda a percepção da realidade.</p>" },
+    { "type": "text", "weight": 1, "range": [20,20], "name": "Sobrevivência", "img": "icons/svg/book.svg", "description": "<p>Às vezes, essa é a única recompensa.</p>" }
+  ],
+  "replacement": true,
+  "displayRoll": true,
+  "formula": "2d20"
+}

@@ -1,0 +1,33 @@
+{
+  "name": "Coadjuvantes - Horror",
+  "img": "icons/svg/d20-grey.svg",
+  "description": "<p>Personagens secundários que auxiliam, atrapalham ou conduzem a investigação. Cada coadjuvante carrega segredos, medos ou informações incompletas.</p>",
+  "results": [
+    { "type": "text", "weight": 1, "range": [1,1], "name": "Sobrevivente profundamente traumatizado", "img": "icons/svg/terror.svg", "description": "<p>Ele viu algo que não consegue descrever sem entrar em pânico.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [2,2], "name": "Parente que sabe mais do que admite", "img": "icons/svg/terror.svg", "description": "<p>Protege um segredo familiar antigo demais.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [3,3], "name": "Informante paranoico", "img": "icons/svg/terror.svg", "description": "<p>Acredita estar sendo observado o tempo todo — talvez esteja.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [4,4], "name": "Sacerdote em crise de fé", "img": "icons/svg/terror.svg", "description": "<p>Suas orações já não são respondidas.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [5,5], "name": "Criança que vê o que adultos não veem", "img": "icons/svg/terror.svg", "description": "<p>Descreve o horror com naturalidade perturbadora.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [6,6], "name": "Vizinho excessivamente prestativo", "img": "icons/svg/terror.svg", "description": "<p>Ele sabe horários, hábitos e segredos de todos.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [7,7], "name": "Arquivista cansado e desiludido", "img": "icons/svg/terror.svg", "description": "<p>Já catalogou coisas que deveriam ter sido destruídas.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [8,8], "name": "Médico que altera registros oficiais", "img": "icons/svg/terror.svg", "description": "<p>Algumas causas de morte nunca são registradas corretamente.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [9,9], "name": "Policial claramente corrupto", "img": "icons/svg/terror.svg", "description": "<p>O suborno é apenas parte do problema.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [10,10], "name": "Acadêmico desacreditado", "img": "icons/svg/terror.svg", "description": "<p>Suas teorias foram ridicularizadas — até agora.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+
+    { "type": "text", "weight": 1, "range": [11,11], "name": "Morador que nunca deixou o local", "img": "icons/svg/terror.svg", "description": "<p>Ele conhece histórias que ninguém mais lembra.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [12,12], "name": "Amigo que desaparece misteriosamente", "img": "icons/svg/terror.svg", "description": "<p>Ele deixa para trás pistas inquietantes.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [13,13], "name": "Funcionário público apático", "img": "icons/svg/terror.svg", "description": "<p>Ele já viu horrores demais para se importar.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [14,14], "name": "Repórter curioso demais", "img": "icons/svg/terror.svg", "description": "<p>Chegou perto demais de algo que não pode publicar.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [15,15], "name": "Zelador silencioso", "img": "icons/svg/terror.svg", "description": "<p>Ele limpa marcas que ninguém mais vê.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [16,16], "name": "Ex-membro de um culto", "img": "icons/svg/terror.svg", "description": "<p>Ele fugiu, mas algo ainda o chama.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [17,17], "name": "Paciente oficialmente curado", "img": "icons/svg/terror.svg", "description": "<p>A cura deixou marcas estranhas.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [18,18], "name": "Testemunha desacreditada", "img": "icons/svg/terror.svg", "description": "<p>Todos dizem que ela mente — exceto ela mesma.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [19,19], "name": "Pessoa que não deveria estar viva", "img": "icons/svg/terror.svg", "description": "<p>Registros indicam sua morte há anos.</p>", "drawn": false, "flags": {}, "documentUuid": null },
+    { "type": "text", "weight": 1, "range": [20,20], "name": "Alguém ligado diretamente a um personagem", "img": "icons/svg/terror.svg", "description": "<p>O horror conhece os personagens melhor do que eles gostariam.</p>", "drawn": false, "flags": {}, "documentUuid": null }
+  ],
+  "replacement": true,
+  "displayRoll": true,
+  "flags": {},
+  "formula": "1d20",
+  "ownership": { "default": 0 }
+}
