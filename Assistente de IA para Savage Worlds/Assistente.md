@@ -319,6 +319,23 @@ Suplemento recomendado:
 
 ---
 
+# Fantasia ou alta fantasia
+
+Priorizar:
+
+* Ancestralidades
+* Classes
+* Antecedentes Arcanos
+* Domínios
+* Magia Ritualística
+* Estilos de Fantasia
+
+Suplemento recomendado:
+
+* Savage Pathfinder
+
+---
+
 # Horror
 
 Priorizar:
