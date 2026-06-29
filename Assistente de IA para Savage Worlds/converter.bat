@@ -25,10 +25,12 @@ if %errorlevel% neq 0 (
     goto :fim
 )
 
-:: 2. Atualiza o pip e instala o markitdown silenciosamente
-echo [1/3] Verificando e instalando dependencias...
+:: 2. Atualiza o pip e instala o markitdown COM SUPORTE A PDF silenciosamente
+echo [1/3] Verificando e instalando dependencias (incluindo suporte a PDF)...
 python -m pip install --upgrade pip >nul 2>nul
-python -m pip install --upgrade markitdown >nul 2>nul
+
+:: O segredo está aqui: instalamos com o extra [pdf] entre aspas
+python -m pip install --upgrade "markitdown[pdf]" >nul 2>nul
 
 :: 3. Verifica se o modulo markitdown foi instalado corretamente (verificação rapida)
 python -c "import markitdown" >nul 2>nul
