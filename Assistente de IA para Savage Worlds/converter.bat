@@ -25,23 +25,32 @@ if %errorlevel% neq 0 (
     goto :fim
 )
 
-:: 2. Atualiza o pip e instala o markitdown COM SUPORTE A PDF silenciosamente
-echo [1/3] Verificando e instalando dependencias (incluindo suporte a PDF)...
-python -m pip install --upgrade pip >nul 2>nul
+:: 2. Instala o markitdown COM SUPORTE A PDF (agora com a saida visivel para debug)
+echo [1/3] Instalando dependencias (incluindo suporte a PDF)...
+echo Isso pode levar alguns segundos. Aguarde...
+echo.
 
-:: O segredo está aqui: instalamos com o extra [pdf] entre aspas
-python -m pip install --upgrade "markitdown[pdf]" >nul 2>nul
+python -m pip install --upgrade pip
+python -m pip install --upgrade "markitdown[pdf]"
 
-:: 3. Verifica se o modulo markitdown foi instalado corretamente (verificação rapida)
+:: Se a instalacao com [pdf] falhar (comum no Python 3.14), tenta instalar as libs de PDF manualmente
+if !errorlevel! neq 0 (
+    echo.
+    echo [AVISO] A instalacao com [pdf] falhou. Tentando instalar as dependencias de PDF manualmente...
+    python -m pip install pypdf pdfminer.six pdfplumber
+)
+
+:: 3. Verifica se o modulo markitdown foi instalado corretamente
 python -c "import markitdown" >nul 2>nul
 if !errorlevel! neq 0 (
     echo [ERRO] Falha ao instalar o modulo 'markitdown'.
     goto :fim
 )
+echo.
 echo       Dependencias OK!
 echo.
 
-:: 4. Verifica se existem arquivos PDF na pasta atual (onde o bat está)
+:: 4. Verifica se existem arquivos PDF na pasta atual
 dir /b /a-d *.pdf >nul 2>nul
 if %errorlevel% neq 0 (
     echo [AVISO] Nenhum arquivo .pdf encontrado nesta pasta.
@@ -57,14 +66,13 @@ if not exist "%PASTA_DESTINO%" (
 )
 echo.
 
-:: 6. Varre a pasta e realiza a conversão imediatamente
+:: 6. Varre a pasta e realiza a conversão
 echo [3/3] Iniciando a conversao dos PDFs...
 echo ---------------------------------------
 
 for %%f in (*.pdf) do (
     echo Convertendo: %%~nxf ...
     
-    :: Executa a conversão redirecionando a saida para o arquivo .md
     python -m markitdown "%%f" > "%PASTA_DESTINO%\%%~nf.md"
     
     if !errorlevel! equ 0 (
@@ -75,7 +83,7 @@ for %%f in (*.pdf) do (
 )
 
 echo ---------------------------------------
-echo Processo concluido com sucesso!
+echo Processo concluido!
 
 :fim
 echo.
