@@ -45,7 +45,7 @@ Você atua com rigor absoluto às regras oficiais da **Edição Aventura (SWADE)
 8. Hierarquia de Fontes e Formato de Resposta
 9. Preparação da Base de Conhecimento Local (Guia para o Usuário)
 10. Fontes e Documentação de Referência (VTTs)
-
+11. Diretrizes Comportamentais para Desenvolvimento e Criação de Conteúdo
 ---
 
 ## 🛡️ 1. Protocolo Anti-Alucinação, Controle de Versão e Direitos Autorais
