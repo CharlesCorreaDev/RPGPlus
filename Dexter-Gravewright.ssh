@@ -4,6 +4,58 @@
 # DEXTER v1.0.1 - Gestor Automatizado do Gravewright VTT
 # Gerenciamento, Instalação e Manutenção na VPS (Ubuntu)
 # ==============================================================================
+# ==============================================================================
+# Primeira Instalação (Setup)
+# Para realizar a instalação completa do Gravewright VTT, Caddy, uv e criar o serviço 24/7, execute:
+#
+# sudo ./dexter.sh setup
+#
+# O Dexter fará 3 perguntas durante o processo:
+# 
+# Domínio/Subdomínio: Digite a URL inteira onde deseja acessar (ex: vtt.meudominio.com ou meudominio.com).
+# 
+# Usuário do sistema: Pressione Enter para manter o padrão (ubuntu) ou informe seu usuário.
+# 
+# Porta interna: Pressione Enter para usar a porta padrão (8000).
+# 
+# Ao finalizar, o Caddy gerará o certificado SSL (HTTPS) e o VTT já estará rodando 24 horas.
+# 
+# Comandos de Operação e Manutenção
+# Após o setup, você pode gerenciar tudo usando o script diretamente no terminal:
+# 
+# Verificar se está rodando e uso de RAM/Disco:
+# 
+# ./dexter.sh status
+# 
+# Reiniciar a aplicação e o proxy:
+# 
+# ./dexter.sh reiniciar
+# 
+# Desligar ou Ligar o VTT:
+# 
+# ./dexter.sh desligar
+# ./dexter.sh ligar
+# 
+# Atualizar o Gravewright VTT (pull do repositório + recompile de pacotes):
+# 
+# ./dexter.sh atualizar
+# 
+# Gerar um Backup compactado (.zip):
+# 
+# ./dexter.sh backup
+# 
+# Criar memória SWAP na VPS (recomendado para instâncias com Pouca RAM):
+# 
+# sudo ./dexter.sh criarswap
+# 
+# Verificar portas abertas (80, 443, 8000):
+# 
+# ./dexter.sh portas
+# 
+# Consultando a Ajuda
+# 
+# Se esquecer algum comando, basta digitar ./dexter.sh sem parâmetros para exibir o menu de ajuda
+# ==============================================================================
 
 VERSION="1.0.1"
 INSTALL_DIR="/opt/gravewright"
