@@ -1,0 +1,316 @@
+#!/usr/bin/env bash
+
+# ==============================================================================
+# DEXTER v1.0.1 - Gestor Automatizado do Gravewright VTT
+# Gerenciamento, Instalação e Manutenção na VPS (Ubuntu)
+# ==============================================================================
+
+VERSION="1.0.1"
+INSTALL_DIR="/opt/gravewright"
+SERVICE_NAME="gravewright.service"
+
+# Cores para logs
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+CYAN='\033[0;36m'
+YELLOW='\033[1;33m'
+BOLD='\033[1m'
+NC='\033[0m'
+
+log_info() { echo -e "${CYAN}[DEXTER]:${NC} $1"; }
+log_success() { echo -e "${GREEN}[DEXTER]:${NC} $1"; }
+log_warn() { echo -e "${YELLOW}[DEXTER]:${NC} $1"; }
+log_error() { echo -e "${RED}[DEXTER]:${NC} $1"; }
+
+CURRENT_USER=$(whoami)
+USER_HOME=$(eval echo "~$CURRENT_USER")
+UV_BIN="$USER_HOME/.local/bin/uv"
+[ ! -f "$UV_BIN" ] && UV_BIN=$(which uv 2>/dev/null || echo "$USER_HOME/.local/bin/uv")
+
+show_header() {
+    echo -e "${CYAN}${BOLD}"
+    echo "=========================================================="
+    echo "    DEXTER // PROTOCOLO DE SUPORTE GRAVEWRIGHT VTT       "
+    echo "=========================================================="
+    echo -e "${NC}"
+}
+
+case "$1" in
+    setup)
+        show_header
+        if [ "$EUID" -ne 0 ]; then
+            log_error "O setup requer privilégios de root. Execute com: sudo ./dexter.sh setup"
+            exit 1
+        fi
+
+        log_info "Iniciando instalação completa do Gravewright VTT..."
+        
+        read -p "Informe o domínio ou subdomínio para HTTPS (ex: vtt.meudominio.com ou meudominio.com): " DOMAIN_NAME
+        if [ -z "$DOMAIN_NAME" ]; then
+            log_error "O endereço do domínio não pode ser vazio. Operação cancelada."
+            exit 1
+        fi
+
+        read -p "Informe o usuário do sistema [ubuntu]: " SYSTEM_USER
+        SYSTEM_USER=${SYSTEM_USER:-ubuntu}
+
+        read -p "Informe a porta interna do Gravewright [8000]: " APP_PORT
+        APP_PORT=${APP_PORT:-8000}
+
+        # 1. Atualização e dependências do sistema
+        log_info "1/5 Atualizando pacotes do sistema e firewall..."
+        apt-get update -y && apt-get upgrade -y
+        apt-get install -y git curl ufw zip unzip debian-keyring debian-archive-keyring apt-transport-https build-essential
+
+        ufw allow 80/tcp > /dev/null 2>&1 || true
+        ufw allow 443/tcp > /dev/null 2>&1 || true
+        ufw allow ${APP_PORT}/tcp > /dev/null 2>&1 || true
+
+        # 2. Instalação do uv
+        log_info "2/5 Instalando/Atualizando o gerenciador Python 'uv'..."
+        su - "$SYSTEM_USER" -c "curl -LsSf https://astral.sh/uv/install.sh | sh"
+        TARGET_UV="/home/$SYSTEM_USER/.local/bin/uv"
+
+        # 3. Clone, versão do Python e sincronização de dependências
+        log_info "3/5 Clonando repositório e preparando o ambiente virtual..."
+        if [ -d "$INSTALL_DIR" ]; then
+            log_warn "Diretório $INSTALL_DIR já existe. Atualizando repositório..."
+            cd "$INSTALL_DIR" && git pull
+        else
+            git clone https://github.com/Gravewright/gravewright.git "$INSTALL_DIR"
+        fi
+        chown -R "$SYSTEM_USER":"$SYSTEM_USER" "$INSTALL_DIR"
+        
+        # Garante Python 3.12 via uv e sincroniza o projeto
+        su - "$SYSTEM_USER" -c "cd $INSTALL_DIR && $TARGET_UV python install 3.12 && $TARGET_UV sync"
+
+        # 4. Configuração do Serviço Systemd
+        log_info "4/5 Configurando serviço no systemd para execução 24/7..."
+        cat <<EOF > /etc/systemd/system/$SERVICE_NAME
+[Unit]
+Description=Gravewright VTT Server (Managed by Dexter)
+After=network.target
+
+[Service]
+Type=simple
+User=$SYSTEM_USER
+WorkingDirectory=$INSTALL_DIR
+ExecStart=$TARGET_UV run python main.py
+Restart=always
+RestartSec=5
+Environment=PORT=$APP_PORT
+Environment=HOST=0.0.0.0
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+        systemctl daemon-reload
+        systemctl enable $SERVICE_NAME
+        systemctl restart $SERVICE_NAME
+
+        # 5. Instalação e Configuração do Caddy (Proxy + SSL)
+        log_info "5/5 Configurando Caddy (Reverse Proxy + SSL automático)..."
+        if ! command -v caddy &> /dev/null; then
+            curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/gpg.key' | gpg --dearmor -o /usr/share/keyrings/caddy-stable-archive-keyring.gpg
+            curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/debian.deb.txt' | tee /etc/apt/sources.list.d/caddy-stable.list
+            apt-get update -y
+            apt-get install caddy -y
+        fi
+
+        cat <<EOF > /etc/caddy/Caddyfile
+$DOMAIN_NAME {
+    reverse_proxy localhost:$APP_PORT
+}
+EOF
+        systemctl reload caddy
+
+        log_success "Instalação concluída com sucesso!"
+        log_info "URL de Acesso: https://$DOMAIN_NAME"
+        ;;
+
+    ligar)
+        log_info "Iniciando os serviços do Gravewright VTT e Proxy..."
+        sudo systemctl start $SERVICE_NAME 2>/dev/null || systemctl start $SERVICE_NAME
+        sudo systemctl start caddy 2>/dev/null || systemctl start caddy
+        log_success "Serviço ativado."
+        ;;
+
+    desligar)
+        log_info "Encerrando os serviços do Gravewright VTT..."
+        sudo systemctl stop $SERVICE_NAME 2>/dev/null || systemctl stop $SERVICE_NAME
+        log_warn "Serviço Gravewright parado."
+        ;;
+
+    reiniciar)
+        log_info "Reiniciando serviços (Gravewright + Caddy)..."
+        sudo systemctl restart $SERVICE_NAME 2>/dev/null || systemctl restart $SERVICE_NAME
+        sudo systemctl reload caddy 2>/dev/null || systemctl reload caddy
+        log_success "Serviços reiniciados."
+        ;;
+
+    versao)
+        show_header
+        echo "Versão do Dexter: $VERSION"
+        echo "Versão do SO: $(grep PRETTY_NAME /etc/os-release | cut -d= -f2 | tr -d '\"')"
+        if [ -f "$UV_BIN" ]; then
+            echo "Versão do uv: $($UV_BIN --version 2>/dev/null)"
+        else
+            echo "Versão do uv: Não localizado"
+        fi
+        echo "Versão do Python: $(python3 --version 2>/dev/null)"
+        if [ -d "$INSTALL_DIR/.git" ]; then
+            GIT_COMMIT=$(cd "$INSTALL_DIR" && git log -1 --format="%h - %s (%cr)" 2>/dev/null)
+            echo "Versão do Gravewright (git commit): $GIT_COMMIT"
+        else
+            echo "Gravewright: Não encontrado em $INSTALL_DIR"
+        fi
+        ;;
+
+    atualizar)
+        log_info "Atualizando o Gravewright VTT do repositório oficial..."
+        if [ ! -d "$INSTALL_DIR" ]; then
+            log_error "Diretório $INSTALL_DIR não foi encontrado."
+            exit 1
+        fi
+
+        $0 desligar
+        cd "$INSTALL_DIR"
+        git pull
+        if [ -f "$UV_BIN" ]; then
+            $UV_BIN python install 3.12
+            $UV_BIN sync
+        fi
+        $0 reiniciar
+        log_success "Gravewright atualizado e sincronizado."
+        ;;
+
+    limpar)
+        log_info "Limpando caches e arquivos temporários do projeto..."
+        if [ -d "$INSTALL_DIR" ]; then
+            find "$INSTALL_DIR" -type d -name "__pycache__" -exec rm -rf {} + 2>/dev/null || true
+            find "$INSTALL_DIR" -type f -name "*.pyc" -delete 2>/dev/null || true
+            find "$INSTALL_DIR" -type f -name "*.tmp" -delete 2>/dev/null || true
+            log_success "Cache limpo."
+        fi
+        ;;
+
+    criarswap)
+        if [ "$EUID" -ne 0 ]; then
+            log_error "A criação de SWAP requer sudo."
+            exit 1
+        fi
+        read -p "Informe o tamanho da SWAP em GB [2]: " SWAP_SIZE
+        SWAP_SIZE=${SWAP_SIZE:-2}
+
+        if grep -q '/swapfile' /proc/swaps; then
+            log_warn "Arquivo /swapfile já está ativo."
+        else
+            log_info "Criando SWAP de ${SWAP_SIZE}GB..."
+            fallocate -l "${SWAP_SIZE}G" /swapfile || dd if=/dev/zero of=/swapfile bs=1M count=$((SWAP_SIZE * 1024))
+            chmod 600 /swapfile
+            mkswap /swapfile
+            swapon /swapfile
+            if ! grep -q '/swapfile' /etc/fstab; then
+                echo '/swapfile none swap sw 0 0' >> /etc/fstab
+            fi
+            log_success "SWAP ativada."
+        fi
+        free -mh
+        ;;
+
+    deletaswap)
+        if [ "$EUID" -ne 0 ]; then
+            log_error "A remoção de SWAP requer sudo."
+            exit 1
+        fi
+        if grep -q '/swapfile' /proc/swaps; then
+            swapoff /swapfile 2>/dev/null || true
+            sed -i '\/swapfile/d' /etc/fstab
+            rm -f /swapfile
+            log_success "SWAP removida."
+        fi
+        ;;
+
+    resetsenha)
+        log_info "Procedimento de redefinição/verificação de dados..."
+        $0 desligar
+        if [ -f "$INSTALL_DIR/db.sqlite3" ] || [ -f "$INSTALL_DIR/gravewright.db" ]; then
+            log_info "Banco SQLite localizado em $INSTALL_DIR."
+        fi
+        read -p "Pressione ENTER para religar o servidor..."
+        $0 ligar
+        ;;
+
+    status)
+        show_header
+        echo -e "${BOLD}== Status dos Serviços ==${NC}"
+        if systemctl is-active --quiet $SERVICE_NAME 2>/dev/null; then
+            echo -e "Gravewright VTT: ${GREEN}ONLINE${NC}"
+        else
+            echo -e "Gravewright VTT: ${RED}OFFLINE${NC}"
+        fi
+
+        if systemctl is-active --quiet caddy 2>/dev/null; then
+            echo -e "Caddy Proxy:     ${GREEN}ONLINE${NC}"
+        else
+            echo -e "Caddy Proxy:     ${RED}OFFLINE${NC}"
+        fi
+
+        echo -e "\n${BOLD}== Consumo de Recursos ==${NC}"
+        free -mh | awk 'NR==2{printf "RAM: Usado: %s / Total: %s (Livre: %s)\n", $3, $2, $4}'
+        df -h / | awk 'NR==2{printf "Disco: Usado: %s / Total: %s (Livre: %s)\n", $3, $2, $4}'
+        ;;
+
+    pc)
+        show_header
+        echo -e "${BOLD}= Espaço em Disco =${NC}"
+        df -h /
+        echo -e "\n${BOLD}= Memória RAM =${NC}"
+        free -mh
+        echo -e "\n${BOLD}= CPU =${NC}"
+        lscpu | egrep 'Model name|CPU\(s\)'
+        ;;
+
+    backup)
+        show_header
+        BACKUP_DIR="$USER_HOME/backups_gravewright"
+        TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
+        BACKUP_FILE="$BACKUP_DIR/gravewright_backup_$TIMESTAMP.zip"
+
+        mkdir -p "$BACKUP_DIR"
+        if [ ! -d "$INSTALL_DIR" ]; then
+            log_error "Pasta $INSTALL_DIR não encontrada."
+            exit 1
+        fi
+
+        log_info "Gerando backup em $BACKUP_FILE..."
+        zip -r -q "$BACKUP_FILE" "$INSTALL_DIR" -x "$INSTALL_DIR/.venv/*" "$INSTALL_DIR/__pycache__/*"
+        log_success "Backup concluído: $(du -sh "$BACKUP_FILE" | cut -f1)"
+        ;;
+
+    portas)
+        show_header
+        echo -e "${BOLD}=== Teste de Portas ===${NC}"
+        for PORT in 80 443 8000; do
+            if ss -tlnp | grep -q ":$PORT "; then
+                echo -e "Porta ${PORT}: ${GREEN}ABERTA${NC}"
+            else
+                echo -e "Porta ${PORT}: ${RED}FECHADA${NC}"
+            fi
+        done
+        ;;
+
+    ip)
+        show_header
+        echo "IP Público: $(curl -s ifconfig.me || echo "N/A")"
+        echo "IP Local:   $(hostname -I | awk '{print $1}')"
+        ;;
+
+    *)
+        show_header
+        echo -e "${BOLD}Uso:${NC} ./dexter.sh {comando}"
+        echo "Comandos: setup | versao | atualizar | reiniciar | desligar | ligar | limpar | criarswap | deletaswap | resetsenha | status | pc | backup | portas | ip"
+        exit 1
+        ;;
+esac
