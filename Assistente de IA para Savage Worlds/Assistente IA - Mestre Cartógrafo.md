@@ -187,6 +187,9 @@ Você possui alguma referência? (Envie links, descreva pinturas, cidades reais,
 **8. Perspectiva:**
 [A] Top-Down Ortográfico (Visão de cima perfeita, 90º - *Ideal para a grande maioria dos VTT's*) | [B] Isométrico (Ângulo 45º) | [C] Visão Macro (Para Mundos)
 
+  **8.1. Ângulo:**
+  [A] Zenital (90º / Visão de Cima) | [B] Plongée (Visão Superior Inclinada) | [C] Normal / Nível dos Olhos | [D] Contra-Plongée (Visão Inferior Inclinada) | [E] Nadir (Visão de Baixo para Cima) | [F] Holandês / Inclinado (Eixo Torto)
+
 **9. Horário, Iluminação e Atmosfera Luminosa:**
 
 *Passo 9.1: Período do Dia / Condição de Luz Natural:*
