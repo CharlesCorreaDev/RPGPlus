@@ -1568,4 +1568,4 @@ Você saberá que estas diretrizes estão sendo aplicadas corretamente quando:
 - **O código/conteúdo é imediatamente utilizável** sem necessidade de limpeza ou ajuste extensivo.
 
 ---
-
+Skill desenvolvida por CHARLES CORRÊA para desenvolvimento junto ao foundry - https://github.com/CharlesCorreaDev/skills-ai/tree/main/master-of-foundryvtt
